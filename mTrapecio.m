@@ -1,7 +1,7 @@
 function [Tn,Wn] = mTrapecio(f,y0,I,h)
 %mTrapecio Método de Trapecio explícito
 %   resuelve el PVI y'=f(t,y), y(t0)=y0
-% donde el vector I=[t0,t0+T] y n es el numero de pasos
+% donde el vector I=[t0,t0+T] y h es el tamaño del paso
 
 Tn=I(1):h:I(2); %la malla del tiempo
 Wn=zeros(1,size(Tn,2)); %preset Wn
