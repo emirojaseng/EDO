@@ -1,5 +1,5 @@
 function [Tn,Wn] = mPMedio(f,y0,I,n)
-%mEuler Método de Euler explícito
+%mEuler Método de Punto Medio explícito
 %   resuelve el PVI y'=f(t,y), y(t0)=y0
 % donde el vector I=[t0,t0+T] y n es el numero de pasos
 
