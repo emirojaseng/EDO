@@ -1,4 +1,4 @@
-%clear all; close all; clc;
+clear all; close all; clc;
 fprintf("3.4 Ecuaciones stiff : explıcito vs implicito")
 fprintf('\n')
 fprintf("1.- Aplicar Euler implicito al PVI")
@@ -58,7 +58,6 @@ plot(Tn6,Wn6);
 title("RK2/3 tol=1/100")
 waitforbuttonpress
 
-fprintf("y(20)= "); display(Wn(size(Wn,2)));
 plot(Tn,Wn);
 hold
 plot(Tn5,Wn5);
@@ -84,6 +83,7 @@ waitforbuttonpress
 hold off
 
 plot(Tn1,Wn1)
+hold
 plot(Tn2,Wn2)
 plot(Tn3,Wn3)
 plot(Tn6,Wn6);
@@ -91,4 +91,32 @@ title("tol=1/100 vs Euler explicito")
 waitforbuttonpress
 hold off
 
-
+%pregunta 4
+fprintf('\n')
+fprintf('\n')
+fprintf("4.- Determinar maximo paso estable")
+fprintf('\n')
+fprintf("Con tiempo final T=20 tol=.4")
+fprintf('\n')
+I=[0,20];
+[Tn7,Wn7]=mRK2_3(f,y0,I,.4);
+y20=Wn7(size(Wn7,2))
+h=Tn7(size(Tn7,2))-Tn7(size(Tn7,2)-1)
+fprintf("Si converge")
+fprintf('\n')
+fprintf('\n')
+fprintf("Con tiempo final T=1000 tol=.5")
+fprintf('\n')
+I=[0,1000];
+[Tn7,Wn7]=mRK2_3(f,y0,I,.5);
+y1000=Wn7(size(Wn7,2))
+h=Tn7(size(Tn7,2))-Tn7(size(Tn7,2)-1)
+fprintf("Si converge (Aunque no como se espera)")
+fprintf('\n')
+fprintf('\n')
+fprintf("Con tiempo final T=1000 tol=.51")
+fprintf('\n')
+[Tn7,Wn7]=mRK2_3(f,y0,I,.51);
+y1000=Wn7(size(Wn7,2))
+h=Tn7(size(Tn7,2))-Tn7(size(Tn7,2)-1)
+fprintf("No converge")
