@@ -32,6 +32,6 @@ theta=0.0000001;
   S(3)=f(t_viejo+h/2,w_viejo+h/2*(S(1)+S(2)));
 w_nuevo=w_viejo+h/2*(S(1)+S(2)); %Metodo del trapecio
   z=w_viejo+h/6*(S(1)+4*S(3)+S(2));
-  ei=abs(w_nuevo-z); %aprox error local
+  ei=abs(w_nuevo-z); %aprox. error local
 Erel=ei/(max(abs(w_viejo),theta));
 end
